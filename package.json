@@ -1,0 +1,44 @@
+{
+  "name": "js-api-smith",
+  "version": "0.1.1",
+  "description": "A lightweight library for declarative object transformations in JavaScript.",
+  "homepage": "https://github.com/luislee818/js-api-smith",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luislee818/js-api-smith.git"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tape test/*.js | tap-spec",
+    "test:w": "tape-watch test/*.js | tap-spec",
+    "lint": "eslint src/*js || true",
+    "doc": "jsdoc2md src/* > doc.md",
+    "prepublish": "npm run test && npm run doc"
+  },
+  "author": "Dapeng Li <luislee818@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "jsdoc-to-markdown": "^3.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
+    "tape-watch": "^2.3.0"
+  },
+  "dependencies": {
+    "ramda": "^0.13.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
