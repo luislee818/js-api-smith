@@ -137,5 +137,14 @@ test('#smash', (t) => {
         assert.end();
     });
 
+    test('uses default value when property is null', (assert) => {
+        from = { secrets: null };
+
+        to = smasher(from);
+
+        assert.deepEqual(to.secrets, []);
+        assert.end();
+    });
+
     t.end();
 });

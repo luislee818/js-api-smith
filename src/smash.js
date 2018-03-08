@@ -21,7 +21,7 @@ const R = require('ramda');
  * { 'foo.bar.baz': 'quxx' }
  * @example
  * // creates property 'foo' with value of 'bar', if 'bar' doesn't exist, default to 99
- * { foo: { from: 'bar', defaults: 99 } }
+ * { foo: { from: 'bar', default: 99 } }
  * @example
  * // creates property 'foo' with value of 'bar', if 'bar' exists, invokes 'toString' on it
  * { foo: { from: 'bar', transformer: 'toString' } }
@@ -57,7 +57,7 @@ function transformProp (from, rule) {
     } else if (R.is(Object, rule)) {
         let propValue = readPropertyValue(from, rule.from);
 
-        if (propValue === undefined && rule.default !== undefined) {
+        if ((propValue === undefined || propValue === null) && rule.default !== undefined) {
             propValue = rule.default;
         }
 

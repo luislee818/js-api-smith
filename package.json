@@ -1,6 +1,6 @@
 {
   "name": "js-api-smith",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A lightweight library for declarative object transformations in JavaScript.",
   "homepage": "https://github.com/luislee818/js-api-smith",
   "repository": {
